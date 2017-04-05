@@ -9,7 +9,7 @@ var rectY = 100;
    gameOver = 0;
    speed = [-3, -4, -5, 3, 4, 5];
    score = 0;
-var   wid, hei, wid0, hei0;
+var   wid, hei, wid0, hei0, k;
 
 
   function setup() {
@@ -19,7 +19,13 @@ if (windowWidth < windowHeight) {
    hei = windowWidth;
    wid0 = 0;
    hei0 = 0;
+   } else {
+      wid = windowHeight;
+      hei = windowHeight;
+      wid0 = windowWigth - windowHeight/2;
+      hei0 = 0
    }
+
   ellX = random(wid0 + 100, wid - 100);
   ellY = random(hei0 + 100, hei - 100);
   ellSpeedY = random(speed);
