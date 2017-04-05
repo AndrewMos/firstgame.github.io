@@ -11,7 +11,7 @@ var rectY = 100;
    score = 0;
 
   function setup() {
-  createCanvas(1000,1000);
+  //createCanvas(1000,1000);
   ellX = random(100, canvas.width - 100);
   ellY = random(100, canvas.height - 100);
   ellSpeedY = random(speed);
