@@ -9,8 +9,8 @@ var rectY = 100;
    gameOver = 0;
    speed = [-3, -4, -5, 3, 4, 5];
    score = 0;
-   wid = 480 * 1.3;
-   hei = 550 * 1.3;
+   wid = 480;
+   hei = 550;
 
 
   function setup() {
