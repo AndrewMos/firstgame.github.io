@@ -96,21 +96,21 @@ k = wid / 400;
      
   if ((rectY + 50)*k > (hei - 10)*k) {
   rectSpeed = 0;
-  rectY = hei - 60;
+  rectY = (hei - 60)k;
   }
-  if ((rectY) < 10) {
+  if ((rectY)*k < 10*k) {
   rectSpeed = 0;
-  rectY = 10;
+  rectY = 10*k;
   }
 
-  ellipse(ellX, ellY, ellR, ellR);
+  ellipse(ellX*k, ellY*k, ellR*k, ellR*k);
   ellX = ellX + ellSpeedX;
   ellY = ellY + ellSpeedY;
-  if ((ellY + ellR/2 > hei)
-   || (ellY - ellR/2 < hei0)) {
+  if (((ellY + ellR/2)*k > hei)
+   || ((ellY - ellR/2)*k < hei0)) {
     ellSpeedY = -ellSpeedY;
   }
-  if ((ellX - ellR/2 < 20) && (ellY > rectY-5) && (ellY < rectY + 55)) {
+  if (((ellX - ellR/2)*k < 20*k) && (ellY*k > (rectY-5)*k) && (ellY*k < (rectY + 55)*k)) {
     ellX = 20 + ellR/2;
     ellSpeedX = -ellSpeedX;
     score ++;
@@ -119,7 +119,7 @@ k = wid / 400;
          ellSpeedY = ellSpeedY * 1.01;
   }
   }
-  if (ellX + ellR/2 > wid)  {
+  if ((ellX + ellR/2)*k > wid)  {
     ellSpeedX = -ellSpeedX;
 
   }
