@@ -9,20 +9,20 @@ var rectY = 100;
    gameOver = 0;
    speed = [-3, -4, -5, 3, 4, 5];
    score = 0;
-   wid = 480;
-   hei = 550;
+var   wid, hei, wid0, hei0;
 
 
   function setup() {
-     var cnv = createCanvas(windowWidth,windowHeight);
-  var x = (windowWidth - width) / 2;
-  var y = (windowHeight - height) / 2;
-  cnv.position(x, y);
-
-  ellX = random(100, wid - 100);
-  ellY = random(100, hei - 100);
+     createCanvas(windowWidth,windowHeight);
+if (windowWidth < windowHeight) {
+   wid = windowWidth;
+   hei = windowWidth;
+   wid0 = 0;
+   hei0 = 0;
+   }
+  ellX = random(wid0 + 100, wid - 100);
+  ellY = random(hei0 + 100, hei - 100);
   ellSpeedY = random(speed);
-
   }
 
   function mousePressed() {
@@ -44,8 +44,8 @@ var rectY = 100;
     ellSpeedX = ellSpeedX / 1.2;
 
      if (gameOver == 1) {
-      ellX = random(100, wid - 100);
-  ellY = random(100, hei - 100);
+  ellX = random(wid0 + 100, wid - 100);
+  ellY = random(hei0 + 100, hei - 100);
   ellSpeedY = random(speed);
   ellSpeedX = 5;
   gameOver = 0;
@@ -57,9 +57,9 @@ var rectY = 100;
   function keyReleased() {
     rectAcc = 0.5;
     ellSpeedX = ellSpeedX / 1.2;
-
+                                //change plz
     if (gameOver == 1) {
-      ellX = random(100, wid - 100);
+  ellX = random(100, wid - 100);
   ellY = random(100, hei - 100);
   ellSpeedY = random(speed);
   ellSpeedX = 5;
@@ -71,7 +71,7 @@ var rectY = 100;
 
   function draw() {
      fill(230);
-  rect(0, 0, wid+5, hei+5);
+  rect(wid0, hei0, wid+5, hei+5);
 
  if (ellX < 10) {
     gameOver = 1;
@@ -81,9 +81,9 @@ var rectY = 100;
 
   textSize(35);
   fill(0, 102, 153);
-  text(score, 15, 50);
+  text(score, wid0 + 15, hei0 + 50);
   noStroke();
-  rect(10, rectY, 10, 50);
+  rect(wid0 + 10, rectY, 10, 50);
   rectY = rectY + rectSpeed;
   rectSpeed = rectSpeed + rectAcc;
      
@@ -101,7 +101,7 @@ var rectY = 100;
   ellX = ellX + ellSpeedX;
   ellY = ellY + ellSpeedY;
   if ((ellY + ellR/2 > hei)
-   || (ellY - ellR/2 < 0)) {
+   || (ellY - ellR/2 < hei0)) {
     ellSpeedY = -ellSpeedY;
   }
   if ((ellX - ellR/2 < 20) && (ellY > rectY-5) && (ellY < rectY + 55)) {
