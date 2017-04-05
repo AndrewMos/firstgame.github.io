@@ -22,10 +22,10 @@ if (windowWidth < windowHeight) {
    } else {
       wid = windowHeight;
       hei = windowHeight;
-      wid0 = windowWidth - windowHeight/2;
+      wid0 = windowWidth/2 - windowHeight/2;
       hei0 = 0
    }
-k = wid / 500;
+k = wid / 400;
   ellX = random(wid0 + 100, wid - 100);
   ellY = random(hei0 + 100, hei - 100);
   ellSpeedY = random(speed);
@@ -77,24 +77,24 @@ k = wid / 500;
 
   function draw() {
      fill(230);
-  rect(wid0, hei0, wid+5, hei+5);
+  rect(wid0*k, hei0*k, (wid+5)*k, (hei+5)*k);
 
- if (ellX < 10) {
+ if (ellX*k < 10*k) {
     gameOver = 1;
     score = ('Your score: ' + score + '  Press any key');
   noLoop();
   }
 
-  textSize(35);
+  textSize(35*k);
   fill(0, 102, 153);
   text(score + "  " + k , wid0 + 15, hei0 + 50);
   noStroke();
-  rect(wid0 + 10, rectY, 10, 50);
+  rect((wid0 + 10)*k, rectY*k, 10*k, 50*k);
   rectY = rectY + rectSpeed;
   rectSpeed = rectSpeed + rectAcc;
      
      
-  if ((rectY + 50) > hei - 10) {
+  if ((rectY + 50)*k > (hei - 10)*k) {
   rectSpeed = 0;
   rectY = hei - 60;
   }
