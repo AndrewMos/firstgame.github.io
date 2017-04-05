@@ -22,10 +22,10 @@ if (windowWidth < windowHeight) {
    } else {
       wid = windowHeight;
       hei = windowHeight;
-      wid0 = windowWigth - windowHeight/2;
+      wid0 = windowWidth - windowHeight/2;
       hei0 = 0
    }
-
+k = wid / 500;
   ellX = random(wid0 + 100, wid - 100);
   ellY = random(hei0 + 100, hei - 100);
   ellSpeedY = random(speed);
@@ -87,7 +87,7 @@ if (windowWidth < windowHeight) {
 
   textSize(35);
   fill(0, 102, 153);
-  text(score, wid0 + 15, hei0 + 50);
+  text(score + "  " + k , wid0 + 15, hei0 + 50);
   noStroke();
   rect(wid0 + 10, rectY, 10, 50);
   rectY = rectY + rectSpeed;
