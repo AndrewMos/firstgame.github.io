@@ -108,9 +108,9 @@ var rectY = 100;
     ellX = 20 + ellR/2;
     ellSpeedX = -ellSpeedX;
     score ++;
-     if (score > 9) {
-        ellSpeedX = ellSpeedX + score/10;
-         ellSpeedY = ellSpeedY + score/10;
+     if (score > 3) {
+        ellSpeedX = ellSpeedX + 0.05;
+         ellSpeedY = ellSpeedY + 0.05;
   }
   }
   if (ellX + ellR/2 > wid)  {
