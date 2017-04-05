@@ -70,6 +70,7 @@ var rectY = 100;
   }
 
   function draw() {
+     background(255);
      fill(230);
   rect(0, 0, wid, hei);
 
