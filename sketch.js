@@ -11,7 +11,11 @@ var rectY = 100;
    score = 0;
 
   function setup() {
-  createCanvas(480,550);
+     var cnv = createCanvas(480,550);
+  var x = (windowWidth - width) / 2;
+  var y = (windowHeight - height) / 2;
+  cnv.position(x, y);
+  
   ellX = random(100, canvas.width - 100);
   ellY = random(100, canvas.height - 100);
   ellSpeedY = random(speed);
