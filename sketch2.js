@@ -86,10 +86,10 @@ var rectY = 100;
   rect(10, rectY, 10, 50);
   rectY = rectY + rectSpeed;
   rectSpeed = rectSpeed + rectAcc;
-     
-        ellSpeedX = ellSpeedX + score/50;
-         ellSpeedY = ellSpeedY + score/50;
-     
+     if (score > 9) {
+        ellSpeedX = ellSpeedX + score/10;
+         ellSpeedY = ellSpeedY + score/10;
+     }
   if ((rectY + 50) > hei - 10) {
   rectSpeed = 0;
   rectY = hei - 60;
