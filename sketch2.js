@@ -70,6 +70,7 @@ var rectY = 100;
   }
 
   function draw() {
+     fill(230);
   rect(0, 0, wid, hei);
 
  if (ellX < 10) {
