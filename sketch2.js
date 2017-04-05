@@ -109,8 +109,8 @@ var rectY = 100;
     ellSpeedX = -ellSpeedX;
     score ++;
      if (score > 3) {
-        ellSpeedX = ellSpeedX + 0.05;
-         ellSpeedY = ellSpeedY + 0.05;
+        ellSpeedX = ellSpeedX * 1.01;
+         ellSpeedY = ellSpeedY * 1.01;
   }
   }
   if (ellX + ellR/2 > wid)  {
