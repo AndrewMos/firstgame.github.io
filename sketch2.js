@@ -28,20 +28,20 @@ var rectY = 100;
   function mousePressed() {
     rectSpeed = -7;
     rectAcc = -0.3;
-    ellSpeedX = ellSpeedX * 1.8;
+    ellSpeedX = ellSpeedX * 1.2;
   }
 
   function keyPressed() {
     rectSpeed = -7;
     rectAcc = -0.3;
-    ellSpeedX = ellSpeedX * 1.8;
+    ellSpeedX = ellSpeedX * 1.2;
 
 
   }
 
   function mouseReleased() {
     rectAcc = 0.5;
-    ellSpeedX = ellSpeedX / 1.8;
+    ellSpeedX = ellSpeedX / 1.2;
 
      if (gameOver == 1) {
       ellX = random(100, wid - 100);
@@ -56,7 +56,7 @@ var rectY = 100;
 
   function keyReleased() {
     rectAcc = 0.5;
-    ellSpeedX = ellSpeedX / 1.8;
+    ellSpeedX = ellSpeedX / 1.2;
 
     if (gameOver == 1) {
       ellX = random(100, wid - 100);
