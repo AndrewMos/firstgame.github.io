@@ -70,9 +70,8 @@ var rectY = 100;
   }
 
   function draw() {
-     background(255);
      fill(230);
-  rect(0, 0, wid, hei);
+  rect(0, 0, wid+5, hei+5);
 
  if (ellX < 10) {
     gameOver = 1;
